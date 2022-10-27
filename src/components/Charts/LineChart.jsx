@@ -32,7 +32,7 @@ export const options = {
   plugins: {
     title: {
       display: true,
-      text: "Chart.js Line Chart - Multi Axis",
+      text: "4G Users vs home broadband",
     },
   },
   scales: {

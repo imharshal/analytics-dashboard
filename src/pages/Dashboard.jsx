@@ -1,4 +1,4 @@
-import { Paper, Box, Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 import React from "react";
 import { DoughnutChart } from "../components/Charts/DoughnutChart";
 import { LineChart } from "../components/Charts/LineChart";
@@ -16,7 +16,7 @@ function Dashboard() {
       <Card>
         <CardContent sx={{ width: "100%", flexGrow: 1 }}>
           <Typography gutterBottom variant="p" component="div">
-            Technologies used
+            Technologies liked
           </Typography>
           <PieChart />
         </CardContent>
@@ -32,7 +32,7 @@ function Dashboard() {
       <Card>
         <CardContent sx={{ minWidth: 500 }}>
           <Typography gutterBottom variant="p" component="div">
-            Technologies used
+            Internet useres
           </Typography>
           <LineChart />
         </CardContent>

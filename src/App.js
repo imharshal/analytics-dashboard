@@ -7,6 +7,8 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Main from "./components/Main/Main";
 import DrawerHeader from "./components/Sidebar/DrawerHeader";
 import { BrowserRouter } from "react-router-dom";
+// import AnalyticsCard from "./components/Card/AnalyticsCard";
+import Dashboard from "./pages/Dashboard";
 export default function App() {
   const [open, setOpen] = useState(true);
   const [darkMode, setDarkMode] = useState(true);
@@ -39,8 +41,9 @@ export default function App() {
             darkMode={darkMode}
           />
           <Sidebar handleDrawerClose={handleDrawerClose} open={open} />
-          <Main>
+          <Main open={open}>
             <DrawerHeader />
+            <Dashboard />
             {/* <Content /> */}
           </Main>
         </Box>

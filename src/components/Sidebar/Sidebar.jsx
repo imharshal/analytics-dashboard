@@ -1,15 +1,14 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
-  ListItemButton,
   IconButton,
   Divider,
   Drawer,
-  Link,
+  // Link,
 } from "@mui/material";
 
 import {
@@ -48,19 +47,17 @@ export default function Sidebar({ open, handleDrawerClose }) {
       </DrawerHeader>
       {/* <Divider /> */}
       <List>
-        <ListItem button component={Link} to="https://www.google.com">
+        <ListItem button component={Link} to="/dashboard">
           <ListItemIcon>
             <Dashboard />
           </ListItemIcon>
           <ListItemText primary="Dashboard" />
         </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <Analytics />
-            </ListItemIcon>
-            <ListItemText primary="Analytics" />
-          </ListItemButton>
+        <ListItem button component={Link} to="/analytics">
+          <ListItemIcon>
+            <Analytics />
+          </ListItemIcon>
+          <ListItemText primary="Analytics" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
@@ -68,7 +65,7 @@ export default function Sidebar({ open, handleDrawerClose }) {
           </ListItemIcon>
           <ListItemText primary="Explore" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to="/favorites">
           <ListItemIcon>
             <Favorite />
           </ListItemIcon>
@@ -77,13 +74,13 @@ export default function Sidebar({ open, handleDrawerClose }) {
       </List>
       <Divider />
       <List>
-        <ListItem button>
+        <ListItem button component={Link} to="/devices">
           <ListItemIcon>
             <Devices />
           </ListItemIcon>
           <ListItemText primary="Devices" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to="/settings">
           <ListItemIcon>
             <Settings />
           </ListItemIcon>

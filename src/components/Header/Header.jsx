@@ -51,7 +51,7 @@ export default function Header({
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap>
+        <Typography variant="h6" noWrap color="secondary" fontWeight={600}>
           Acciojob
         </Typography>
         <Box sx={{ flexGrow: 1 }} />

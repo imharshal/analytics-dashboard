@@ -5,16 +5,23 @@ import { LineChart } from "../components/Charts/LineChart";
 import PieChart from "../components/Charts/PieChart";
 function Dashboard() {
   return (
-    <Box sx={{ display: "flex", gap: 3 }}>
-      <Card sx={{ minWidth: 400 }}>
-        <CardContent>
+    <Box
+      sx={{
+        display: "flex",
+        gap: 3,
+        flexWrap: "wrap",
+        width: "100%",
+      }}
+    >
+      <Card>
+        <CardContent sx={{ width: "100%", flexGrow: 1 }}>
           <Typography gutterBottom variant="p" component="div">
             Technologies used
           </Typography>
           <PieChart />
         </CardContent>
       </Card>
-      <Card sx={{ minWidth: 400 }}>
+      <Card>
         <CardContent>
           <Typography gutterBottom variant="p" component="div">
             Technologies used
@@ -22,8 +29,8 @@ function Dashboard() {
           <DoughnutChart />
         </CardContent>
       </Card>
-      <Card sx={{ minWidth: 400 }}>
-        <CardContent>
+      <Card>
+        <CardContent sx={{ minWidth: 500 }}>
           <Typography gutterBottom variant="p" component="div">
             Technologies used
           </Typography>

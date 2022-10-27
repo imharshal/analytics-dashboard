@@ -24,39 +24,54 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  interaction: {
+    mode: "index",
+    intersect: false,
+  },
+  stacked: false,
   plugins: {
-    legend: {
-      position: "top",
-    },
     title: {
       display: true,
-      text: "Chart.js Line Chart",
+      text: "Chart.js Line Chart - Multi Axis",
+    },
+  },
+  scales: {
+    y: {
+      type: "linear",
+      display: true,
+      position: "left",
+    },
+    y1: {
+      type: "linear",
+      display: true,
+      position: "right",
+      grid: {
+        drawOnChartArea: false,
+      },
     },
   },
 };
-const labels = ["Jan", "Mar", "May", "Jul", "Sept", "Nov"];
+
+const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
 export const data = {
-  type: "line",
-  data: {
-    labels,
-    datasets: [
-      {
-        label: "Broadband users",
-        data: labels.map(() =>
-          faker.datatype.number({ min: -1000, max: 1000 })
-        ),
-        backgroundColor: "rgba(153,255,51,0.4)",
-      },
-      {
-        label: "4g Users",
-        data: labels.map(() =>
-          faker.datatype.number({ min: -1000, max: 1000 })
-        ),
-        backgroundColor: "rgba(255,153,0,0.4)",
-      },
-    ],
-  },
+  labels,
+  datasets: [
+    {
+      label: "Broadband Users",
+      data: labels.map(() => faker.datatype.number({ min: 1, max: 10000 })),
+      borderColor: "rgb(255, 99, 132)",
+      backgroundColor: "rgba(255, 99, 132, 0.5)",
+      yAxisID: "y",
+    },
+    {
+      label: "4G Users",
+      data: labels.map(() => faker.datatype.number({ min: 1, max: 10000 })),
+      borderColor: "rgb(53, 162, 235)",
+      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      yAxisID: "y1",
+    },
+  ],
 };
 
 export function LineChart() {
